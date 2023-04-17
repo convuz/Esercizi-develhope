@@ -34,7 +34,7 @@ default_dag_args = {
     'project_id': 1
     }
 
-with DAG("market_data_alphavantage_dag", schedule_interval = '@daily', catchup=False, default_args = default_dag_args) as dag_python:
+with DAG("Es_02_DAG", schedule_interval = '@daily', catchup=False, default_args = default_dag_args) as dag_python:
 
     task_0 = PythonOperator(task_id = "get_market_data", python_callable = get_data, op_kwargs = {'tickers' : []})
 
