@@ -36,7 +36,6 @@ default_dag_args = {
 
 with DAG("market_data_alphavantage_dag", schedule_interval = '@daily', catchup=False, default_args = default_dag_args) as dag_python:
 
-    # here we define our tasks
     task_0 = PythonOperator(task_id = "get_market_data", python_callable = get_data, op_kwargs = {'tickers' : []})
 
     task_0
